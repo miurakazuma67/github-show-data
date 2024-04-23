@@ -1,12 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  const [commits, setCommits] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchCommits = async () => {
+  //     try {
+  //       const response = await axios.get('https://api.github.com/repos/{miurakazuma67}/{TimeManager}/commits');
+  //       setCommits(response.data);
+  //       console.log("commits", commits)
+  //     } catch (error) {
+  //       console.error('Error fetching data: ', error);
+  //     }
+  //   };
+
+  //   fetchCommits();
+  // }, []); 
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -16,7 +31,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Gitのコミット数を確認できるよ！
         </a>
       </header>
     </div>
